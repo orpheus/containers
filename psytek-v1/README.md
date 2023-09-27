@@ -24,7 +24,7 @@ make ls
 ```bash
 ./setup/exp-create-skills.sh
 ```
-5. Download and run the strings-v1 desktop app from the github releases
+5. Download and run the strings-v1 desktop app from [this google drive](https://drive.google.com/file/d/1Qv7IMFGj6oCJIYr97HA5RbVwKMo2jOPI/view?usp=sharing).
 
 
 6. Open up `localhost:8083` and login with `admin:admin`
