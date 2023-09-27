@@ -5,25 +5,29 @@ This is a quick-setup for EXP V1 and Strings V1.
 
 ### Setup
 
-Install docker onto your computer.
+1. Install docker onto your computer.
 
 This setup is meant for macOS. I have not tested against other build systems.
 
-To pull and run the images
+2. Pull and run the images
 ```bash
 make down
 make up
 make ls
-```
 
-Run the login script and get the access code
+```
+3. Run the login script and get the access code
 ```bash
-./setup/login.sh
+./setup/exp-login.sh
 ```
+4. Replace the access code in the following script and run it
+```bash
+./setup/exp-create-skills.sh
+```
+5. Download and run the strings-v1 desktop app from the github releases
 
-Download and run the strings-v1 desktop app from the github releases
 
-Open up `localhost:8083` and login with `admin:admin`
+6. Open up `localhost:8083` and login with `admin:admin`
 
 ### Notes and Complication
 

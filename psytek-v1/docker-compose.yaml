@@ -26,6 +26,26 @@ services:
     ports:
       - "8081:8080"
 
+  exp-go:
+    image: psytek/exp:1.0.0
+    depends_on:
+      - db
+    restart: always
+    environment:
+      DB_PORT: 5445
+      DB_NAME: exp
+      DB_PASS: password
+    ports:
+      - "8082:8080"
+
+  exp-web:
+    image: psytek/exp-web:local
+    depends_on:
+      - exp-go
+    restart: always
+    ports:
+      - "8083:80"
+
 volumes:
   database_data:
     driver: local
