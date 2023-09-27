@@ -1,0 +1,31 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Mount the SQL script
+      - database_data:/var/lib/postgresql/data
+    ports:
+      - "5445:5432"
+
+  strings-go:
+    image: psytek/strings:local
+    depends_on:
+      - db
+    restart: always
+    environment:
+      DB_PORT: 5445
+      DB_NAME: strings
+      DB_PASS: password
+    ports:
+      - "8081:8080"
+
+volumes:
+  database_data:
+    driver: local
